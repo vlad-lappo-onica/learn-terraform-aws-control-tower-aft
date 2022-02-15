@@ -1,7 +1,7 @@
 #!/bin/bash
 export AFT_MGMT_ACCT="$(terraform output -raw aft_management_account_id)"
 export LOG_ACCT="$(terraform output -raw log_archive_account_id)"
-export REGION="$(terraform output -raw region)"
+export REGION="us-east-1" "$(terraform output -raw region)"
 export AWS_PAGER=""
 if grep -q "Warning" <<<$AFT_MGMT_ACCT; then
   echo "\$AFT_MGMT_ACCT is empty. Run 'terraform refresh'"

@@ -8,8 +8,15 @@ module "aft" {
   tf_backend_secondary_region = var.tf_backend_secondary_region
 
   vcs_provider                                  = "github"
-  account_request_repo_name                     = "${var.github_username}/learn-terraform-aft-account-request"
-  account_provisioning_customizations_repo_name = "${var.github_username}/learn-terraform-aft-account-provisioning-customizations"
-  global_customizations_repo_name               = "${var.github_username}/learn-terraform-aft-global-customizations"
-  account_customizations_repo_name              = "${var.github_username}/learn-terraform-aft-account-customizations"
+  account_request_repo_branch = "quadex-infra"
+  global_customizations_repo_branch = "quadex-infra"
+  account_customizations_repo_branch = "quadex-infra"
+  account_provisioning_customizations_repo_branch = "quadex-infra"
+
+  account_request_repo_name                     = "${var.github_username}/aft-account-request"
+  account_provisioning_customizations_repo_name = "${var.github_username}/aft-account-provisioning-customizations"
+  global_customizations_repo_name               = "${var.github_username}/aft-global-customizations"
+  account_customizations_repo_name              = "${var.github_username}/aft-account-customizations"
+
+  aft_feature_delete_default_vpcs_enabled = true
 }
