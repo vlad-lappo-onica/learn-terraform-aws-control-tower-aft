@@ -8,10 +8,10 @@ module "aft" {
   tf_backend_secondary_region = var.tf_backend_secondary_region
 
   vcs_provider                                  = "github"
-  account_request_repo_branch = "quadex-infra"
-  global_customizations_repo_branch = "quadex-infra"
-  account_customizations_repo_branch = "quadex-infra"
-  account_provisioning_customizations_repo_branch = "quadex-infra"
+  account_request_repo_branch = var.vcs_branch_name
+  global_customizations_repo_branch = var.vcs_branch_name
+  account_customizations_repo_branch = var.vcs_branch_name
+  account_provisioning_customizations_repo_branch = var.vcs_branch_name
 
   account_request_repo_name                     = "${var.github_username}/aft-account-request"
   account_provisioning_customizations_repo_name = "${var.github_username}/aft-account-provisioning-customizations"

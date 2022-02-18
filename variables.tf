@@ -11,3 +11,5 @@ variable "github_username" {}
 variable "ct_home_region" {}
 
 variable "tf_backend_secondary_region" {}
+
+variable "vcs_branch_name" {}
